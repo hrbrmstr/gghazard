@@ -110,7 +110,7 @@ fortify.cox.zph <- function(x, df=4, nsmo=40) {
 #' gg_cox_zph(fortify(cox.zph(vfit)))
 gg_cox_zph <- function(x,
                        resid_col="black", resid_shp=1,
-                       pred_col=resid_col, pred_minmax_col=pred_col,
+                       pred_col="black", pred_minmax_col=pred_col,
                        pred_minmax_linetype="dashed",
                        ribbon_col=pred_col, ribbon_alpha=0.25) {
 
@@ -119,7 +119,7 @@ gg_cox_zph <- function(x,
     gg <- ggplot()
     gg <- gg + geom_ribbon(data=czplot$pred,
                            aes(x, ymax=ymax, ymin=ymin),
-                           alpha=0.25)
+                           color=resid_col, alpha=0.25)
     gg <- gg + geom_line(data=czplot$pred, aes(x, ymin),
                          color=pred_minmax_col, linetype=pred_minmax_linetype)
     gg <- gg + geom_line(data=czplot$pred, aes(x, ymax),

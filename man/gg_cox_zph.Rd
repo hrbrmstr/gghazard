@@ -4,7 +4,7 @@
 \alias{gg_cox_zph}
 \title{Graphical Test of Proportional Hazards}
 \usage{
-gg_cox_zph(x, resid_col = "black", resid_shp = 1, pred_col = resid_col,
+gg_cox_zph(x, resid_col = "black", resid_shp = 1, pred_col = "black",
   pred_minmax_col = pred_col, pred_minmax_linetype = "dashed",
   ribbon_col = pred_col, ribbon_alpha = 0.25)
 }
