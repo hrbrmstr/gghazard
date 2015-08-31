@@ -110,9 +110,9 @@ fortify.cox.zph <- function(x, df=4, nsmo=40) {
 #' gg_cox_zph(fortify(cox.zph(vfit)))
 gg_cox_zph <- function(x,
                        resid_col="black", resid_shp=1,
-                       pred_col=resid_col, pred_minmax_col=pred_Col,
+                       pred_col=resid_col, pred_minmax_col=pred_col,
                        pred_minmax_linetype="dashed",
-                       ribbon_col=pred_Col, ribbon_alpha=0.25) {
+                       ribbon_col=pred_col, ribbon_alpha=0.25) {
 
   lapply(x, function(czplot) {
 
@@ -120,10 +120,13 @@ gg_cox_zph <- function(x,
     gg <- gg + geom_ribbon(data=czplot$pred,
                            aes(x, ymax=ymax, ymin=ymin),
                            alpha=0.25)
-    gg <- gg + geom_line(data=czplot$pred, aes(x, ymin), linetype="dashed")
-    gg <- gg + geom_line(data=czplot$pred, aes(x, ymax), linetype="dashed")
-    gg <- gg + geom_line(data=czplot$pred, aes(x, y))
-    gg <- gg + geom_point(data=czplot$resid, aes(x, y), shape=1)
+    gg <- gg + geom_line(data=czplot$pred, aes(x, ymin),
+                         color=pred_minmax_col, linetype=pred_minmax_linetype)
+    gg <- gg + geom_line(data=czplot$pred, aes(x, ymax),
+                         color=pred_minmax_col, linetype=pred_minmax_linetype)
+    gg <- gg + geom_line(data=czplot$pred, aes(x, y), color=pred_col)
+    gg <- gg + geom_point(data=czplot$resid, aes(x, y),
+                          color=resid_col, shape=resid_shp)
     if (czplot$log) gg <- gg + scale_x_log10()
     gg <- gg + labs(x="Time", y=czplot$ylab)
     gg <- gg + theme_bw()
