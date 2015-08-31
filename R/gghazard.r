@@ -119,7 +119,7 @@ gg_cox_zph <- function(x,
     gg <- ggplot()
     gg <- gg + geom_ribbon(data=czplot$pred,
                            aes(x, ymax=ymax, ymin=ymin),
-                           color=ribbon_col, alpha=0.25)
+                           color=ribbon_col, fill=ribbon_col, alpha=0.25)
     gg <- gg + geom_line(data=czplot$pred, aes(x, ymin),
                          color=pred_minmax_col, linetype=pred_minmax_linetype)
     gg <- gg + geom_line(data=czplot$pred, aes(x, ymax),
