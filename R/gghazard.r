@@ -120,7 +120,7 @@ gg_cox_zph <- function(x,
     gg <- gg + geom_ribbon(data=czplot$pred,
                            aes(x, ymax=ymax, ymin=ymin),
                            color=ribbon_col, fill=ribbon_col,
-                            linetype=pred_minmax_linetype, alpha=0.25)
+                           linetype=pred_minmax_linetype, alpha=0.25)
     gg <- gg + geom_line(data=czplot$pred, aes(x, y), color=pred_col)
     gg <- gg + geom_point(data=czplot$resid, aes(x, y),
                           color=resid_col, shape=resid_shp)
