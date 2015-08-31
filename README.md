@@ -3,7 +3,9 @@ gghazard : Improved Base and Grid Plots for Survival Hazard Cox Regression
 
 The following functions are implemented:
 
-The following data sets are included:
+-   `fortify.cox.zph`: Create data structures from survival hazard Cox Regression
+-   `gg_cox_zph`: Graphical Test of Proportional Hazards (ggplot2/grid)
+-   `plot.cox.zph`: Graphical Test of Proportional Hazards (base)
 
 ### News
 
@@ -55,7 +57,7 @@ library(gghazard)
 library(testthat)
 
 date()
-#> [1] "Sun Aug 30 23:21:28 2015"
+#> [1] "Sun Aug 30 23:23:15 2015"
 
 test_dir("tests/")
 #> testthat results ========================================================================================================
