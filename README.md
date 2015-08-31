@@ -32,16 +32,21 @@ vfit <- coxph(Surv(time, status) ~ trt + factor(celltype) +
 ```
 
 ``` r
-gg_cox_zph(fortify(cox.zph(vfit)), pred_col="red")
+gg_cox_zph(fortify(cox.zph(vfit)), pred_col="maroon")
 ```
 
 <img src="README-unnamed-chunk-2-1.png" title="" alt="" width="864" />
 
 ``` r
-plot(cox.zph(vfit), smoothcol="red", confcol="red")
+par(mfrow=c(2, 3))
+plot(cox.zph(vfit), smoothcol="maroon", confcol="maroon")
 ```
 
-<img src="README-unnamed-chunk-3-1.png" title="" alt="" width="864" /><img src="README-unnamed-chunk-3-2.png" title="" alt="" width="864" /><img src="README-unnamed-chunk-3-3.png" title="" alt="" width="864" /><img src="README-unnamed-chunk-3-4.png" title="" alt="" width="864" /><img src="README-unnamed-chunk-3-5.png" title="" alt="" width="864" /><img src="README-unnamed-chunk-3-6.png" title="" alt="" width="864" />
+<img src="README-unnamed-chunk-3-1.png" title="" alt="" width="864" />
+
+``` r
+par(mfrow=c(1, 1))
+```
 
 ### Test Results
 
@@ -50,7 +55,7 @@ library(gghazard)
 library(testthat)
 
 date()
-#> [1] "Sun Aug 30 23:18:20 2015"
+#> [1] "Sun Aug 30 23:20:15 2015"
 
 test_dir("tests/")
 #> testthat results ========================================================================================================

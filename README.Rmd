@@ -50,11 +50,13 @@ vfit <- coxph(Surv(time, status) ~ trt + factor(celltype) +
 ```
 
 ```{r, fig.width=9, fig.height=11}
-gg_cox_zph(fortify(cox.zph(vfit)), pred_col="red")
+gg_cox_zph(fortify(cox.zph(vfit)), pred_col="maroon")
 ```
 
 ```{r, fig.width=9, fig.height=11}
-plot(cox.zph(vfit), smoothcol="red", confcol="red")
+par(mfrow=c(2, 3))
+plot(cox.zph(vfit), smoothcol="maroon", confcol="maroon")
+par(mfrow=c(1, 1))
 ```
 
 ### Test Results
