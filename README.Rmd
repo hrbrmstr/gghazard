@@ -53,7 +53,7 @@ vfit <- coxph(Surv(time, status) ~ trt + factor(celltype) +
 gg_cox_zph(fortify(cox.zph(vfit)), pred_col="maroon")
 ```
 
-```{r, fig.width=9, fig.height=11}
+```{r, fig.width=9, fig.height=9}
 par(mfrow=c(2, 3))
 plot(cox.zph(vfit), smoothcol="maroon", confcol="maroon")
 par(mfrow=c(1, 1))
