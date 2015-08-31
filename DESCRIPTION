@@ -1,6 +1,6 @@
 Package: gghazard
 Title: Improved Base and Grid Plots for Survival Hazard Cox Regression
-Version: 0.0.0.9000
+Version: 0.0.0.9001
 Authors@R: c(person("Bob", "Rudis", email = "bob@rudis.net", role = c("aut", "cre")))
 Description: Improved Base and Grid Plots for Survival Hazard Cox Regression.
 Depends: R (>= 3.0.0)
@@ -9,3 +9,4 @@ LazyData: true
 Suggests: testthat
 Depends: ggplot2, gridExtra
 Imports: survival, scales, splines, utils, stats, grid
+Encoding: UTF-8

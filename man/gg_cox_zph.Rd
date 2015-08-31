@@ -19,11 +19,11 @@ gg_cox_zph(x, resid_col = "black", resid_shp = 1, pred_col = "black",
 
 \item{pred_minmax_col}{color for the confidence interval lines}
 
+\item{pred_minmax_linetype}{line type for the confidence interval lines}
+
 \item{ribbon_col}{color for the shaded confidence interval region}
 
 \item{ribbon_alpha}{alpha value for the confidence interval region}
-
-\item{pre_minmax_linetype}{line type for the confidence interval lines}
 }
 \value{
 \code{grid} object

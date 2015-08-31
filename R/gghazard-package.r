@@ -3,5 +3,5 @@
 #' @name gghazard
 #' @docType package
 #' @author Bob Rudis (@@hrbrmstr)
-#' @import scales ggplot2 survival splines grid gridExtra
+#' @import scales ggplot2 survival splines grid gridExtra stats utils
 NULL

@@ -96,7 +96,7 @@ fortify.cox.zph <- function(x, df=4, nsmo=40) {
 #' @param resid_shp point shape for the residuals points
 #' @param pred_col color for the prediction fit line
 #' @param pred_minmax_col color for the confidence interval lines
-#' @param pre_minmax_linetype line type for the confidence interval lines
+#' @param pred_minmax_linetype line type for the confidence interval lines
 #' @param ribbon_col color for the shaded confidence interval region
 #' @param ribbon_alpha alpha value for the confidence interval region
 #' @return \code{grid} object
