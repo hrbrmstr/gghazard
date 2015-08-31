@@ -1,0 +1,74 @@
+---
+output:
+  md_document:
+    variant: markdown_github
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-",
+  fig.retina =2 
+)
+```
+
+gghazard : Improved Base and Grid Plots for Survival Hazard Cox Regression
+
+The following functions are implemented:
+
+The following data sets are included:
+
+### News
+
+- Version 0.0.0.9000 released
+
+### Installation
+
+```{r inst, eval=FALSE}
+devtools::install_github("hrbrmstr/gghazard")
+```
+
+```{r opt, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE}
+options(width=120)
+```
+
+### Usage
+
+```{r lib}
+library(survival)
+library(ggplot2)
+library(gghazard)
+
+# current verison
+packageVersion("gghazard")
+
+vfit <- coxph(Surv(time, status) ~ trt + factor(celltype) +
+              karno + age, data=veteran, x=TRUE)
+```
+
+```{r, fig.width=9, fig.height=11}
+gg_cox_zph(fortify(cox.zph(vfit)), pred_col="red")
+```
+
+```{r, fig.width=9, fig.height=11}
+plot(cox.zph(vfit), smoothcol="red", confcol="red")
+```
+
+### Test Results
+
+```{r}
+library(gghazard)
+library(testthat)
+
+date()
+
+test_dir("tests/")
+```
+
+### Code of Conduct
+
+Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). 
+By participating in this project you agree to abide by its terms.
